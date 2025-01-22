@@ -48,3 +48,8 @@ A **Netflix Clone** built as a practice project to enhance skills in **state man
 
 ### 🎨 **Responsive Design**
 - Fully responsive layout designed with **Tailwind CSS** for both desktop and mobile screens.
+
+---
+
+## 🔗 Link for the Deployed Website :
+- 

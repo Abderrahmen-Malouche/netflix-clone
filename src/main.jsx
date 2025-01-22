@@ -10,6 +10,7 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import AuthLayout from "./components/AuthLayout.jsx";
 import Movie from "./pages/Movie.jsx";
+import Serie from "./pages/Serie.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,10 +33,18 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
-        path: "/movie/:id",
+        path: "/movies/:id",
         element: (
           <AuthLayout authentication={true}>
             <Movie />
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/series/:id",
+        element: (
+          <AuthLayout authentication={true}>
+            <Serie />
           </AuthLayout>
         ),
       },

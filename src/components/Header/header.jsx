@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../Logo";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../store/authSlice";
 import { useDispatch } from "react-redux";
 import { signOut } from "firebase/auth";
@@ -22,24 +22,29 @@ function header() {
   return (
     <header className="container mx-auto  flex justify-between items-center py-6 ">
       <div>
+        <Link to="/"> 
         <Logo reducted={false} width={130} height={130} />
+        </Link>
       </div>
       <div>
         {status.loggedIn && (
           <ul>
-            <li className="text-slate-400 text-left">Movies</li>
+            <li className="text-slate-400 text-left font-medium">Movies</li>
           </ul>
         )}
       </div>
       <div>
         {status.loggedIn ? (
+          
           <ul className="flex space-x-6">
-            <li className="text-slate-400 text-left flex justify-center items-center">Profile</li>
-            <button className="bg-red-700 text-white w-full text-md py-2 px-2 rounded-md hover:bg-red-600"
+            <li className="text-white font-medium text-left flex justify-center items-center relative">Profile</li>  
+            <button className="bg-red-700 font-medium text-white w-full text-md py-2 px-2 rounded-md hover:bg-red-600"
             onClick={handleSignout}>
               Sign out
             </button>
           </ul>
+          
+          
         ) : (
           <ul className="flex space-x-4">
             <button
@@ -58,6 +63,7 @@ function header() {
           </ul>
         )}
       </div>
+      
     </header>
   );
 }

@@ -43,14 +43,14 @@ function header() {
         ) : (
           <ul className="flex space-x-4">
             <button
-              className="text-xl  w-24 text-white bg-red-700 rounded-md py-2 hover:bg-red-600"
+              className="text-xl  w-24 text-white bg-red-700 rounded-md py-2 hover:bg-red-600 shadow-md  "
               onClick={() => navigate("/login")}
             >
               Login
             </button>
 
             <button
-              className="border-none text-xl  w-24 bg-none text-white rounded-md py-2"
+              className="border-none text-xl  w-24 bg-none text-white rounded-md py-2  shadow-md"
               onClick={() => navigate("/signup")}
             >
               Sign Up

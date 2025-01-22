@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="container mx-auto bg-black text-gray-400 py-8 grid grid-cols-4 gap-8 text-left text-sm max-w-6xl items-center">
+    <footer className="container mx-auto bg-black text-gray-400 pt-16 grid grid-cols-4 gap-8 text-left text-sm max-w-6xl items-center">
       <ul className="list-none space-y-2 ">
         <div className="flex space-x-4 mb-4">
           <i className="fab fa-facebook "></i>

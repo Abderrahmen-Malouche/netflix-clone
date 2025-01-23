@@ -22,22 +22,31 @@ function Signup() {
             email: userCredential.user.email,
           })
         );
-        navigate("/");
         toast.success("Successfully Signed in!", {
-                  position: "top-center",
-                  autoClose: 5000,
-                  hideProgressBar: false,
-                  closeOnClick: true, // Allow click to close the toast
-                  pauseOnHover: true,
-                  draggable: true,
-                  progress: undefined,
-                  theme: "dark",
-                  transition: Bounce,
-                });
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true, // Allow click to close the toast
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+        setTimeout(()=>{navigate("/");},2000)
+        
       }
     } catch (err) {
       setError("Failed to sign up. Please try again.");
-      console.error(err.message); // Debugging
+      toast.error("Sign in  failed. Please check your credentials.", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              theme: "dark",
+            });
     }
   };
 

@@ -11,6 +11,8 @@ import Login from "./pages/Login.jsx";
 import AuthLayout from "./components/AuthLayout.jsx";
 import Movie from "./pages/Movie.jsx";
 import Serie from "./pages/Serie.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,6 +57,18 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
+      <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={true}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+    />
     </Provider>
   </StrictMode>
 );

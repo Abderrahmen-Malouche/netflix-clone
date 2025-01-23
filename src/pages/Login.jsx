@@ -27,7 +27,6 @@ function Login() {
             email: userCredential.user.email,
           })
         );
-        navigate("/");
         toast.success("Successfully logged in!", {
           position: "top-center",
           autoClose: 5000,
@@ -39,6 +38,10 @@ function Login() {
           theme: "dark",
           transition: Bounce,
         });
+        setTimeout(()=>{
+
+          navigate("/");
+        },2000)
       }
     } catch (err) {
       console.error("Login failed:", err.message);

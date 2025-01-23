@@ -1,9 +1,9 @@
 
 import { initializeApp } from "firebase/app";
 import {getAuth } from "firebase/auth";
-
+const api=import.meta.env.VITE_FIREBASE_API_KEY;
 const firebaseConfig = {
-  apiKey: "AIzaSyDLMvjOGpIMDPrGrKa0wBxcnERsQnJdcWM",
+  apiKey: api,
   authDomain: "flix-24bd9.firebaseapp.com",
   projectId: "flix-24bd9",
   storageBucket: "flix-24bd9.firebasestorage.app",

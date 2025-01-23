@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { login as loginAction } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
 import { use } from "react";
-
+import { ToastContainer, toast,Bounce  } from "react-toastify";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,9 +28,29 @@ function Login() {
           })
         );
         navigate("/");
+        toast.success("Successfully logged in!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true, // Allow click to close the toast
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
       }
     } catch (err) {
       console.error("Login failed:", err.message);
+      toast.error("Login failed. Please check your credentials.", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "dark",
+      });
     }
   };
 
@@ -58,6 +78,19 @@ function Login() {
           >
             Log in
           </button>
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+           
+          />
           <h3 className="mx-auto text-gray-200 font-normal">OR</h3>
           <button
             className="bg-slate-400 text-black w-full h-12 text-xl py-2 px-2 rounded-md"

@@ -63,3 +63,27 @@ export const getPopularSeries = async () => {
     console.error("Error fetching popular series:", err.message);
   }
 };
+
+export const getSeriesTrailer = async (id) => {
+  const url =
+    `https://api.themoviedb.org/3/tv/${id}/videos?language=en-US`;
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        `Bearer ${token}`,
+    },
+  };
+  try{
+    const response = await fetch(url, options);
+    if(!response.ok){
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data
+    }
+  catch(error){
+    console.error("Error fetching trailer:", error.message);
+  }
+};

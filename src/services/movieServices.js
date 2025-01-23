@@ -16,7 +16,6 @@ export const getTrendingMovies = async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (err) {
     console.error("Error fetching trending movies:", err.message);
@@ -38,8 +37,7 @@ export const getMovieDetails = async (id) => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
-    return data;
+    return data
   } catch (error) {
     console.error("Error fetching movie details:", error.message);
   }
@@ -60,9 +58,31 @@ export const getPopularMovies = async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Error fetching popular movies:", error.message);
+  }
+};
+export const getMovieTrailer = async (id) => {
+  const url =
+    `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`;
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        `Bearer ${token}`,
+    },
+  };
+  try{
+    const response = await fetch(url, options);
+    if(!response.ok){
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data
+    }
+  catch(error){
+    console.error("Error fetching trailer:", error.message);
   }
 };

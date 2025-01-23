@@ -5,6 +5,7 @@ import { getSeriesDetails } from '../services/seriesServices'
 import { TiArrowLeftOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
+import MovieTrailer from './MovieTrailer';
 function Serie() {
     const {id} =useParams()
     const [serie,setSerie]=useState({})
@@ -46,23 +47,21 @@ function Serie() {
               </div>
               <p className="text-slate-200 text-lg mt-9">{serie.overview}</p>
     
-              <div className="flex space-x-52 mt-16 items-center  justify-left">
                 <h3 className=" text-lg text-red-700">Country :</h3>
                 <div className="flex space-x-5 hover:text-red-700 text-left">
                   {serie?.production_countries && serie.production_countries > 0 ?
                     serie.production_countries.map((country, index) => (
-                      <h3 key={index} className="text-white text-lg mt-2">
+                      <h3 key={index} className="text-white text-lg ">
                         {country.name}
                       </h3>
-                    )): <p className="text-white text-lg mt-2">No countries available</p>}
+                    )): <p className="text-white text-lg ">No countries available</p>}
                 </div>
-              </div>
-              <div className="flex space-x-52 mt-16 items-center  justify-left">
+              
                 <h3 className="text-red-700 text-lg">Genre :</h3>
                 <div className="flex space-x-5 hover:text-red-700 text-left">
                   {serie?.genres && serie.genres.length > 0 ? (
                     serie.genres.map((genre) => (
-                      <p key={genre.id} className="text-white text-lg mt-2 text-left">
+                      <p key={genre.id} className="text-white text-lg  text-left">
                         {genre.name}
                       </p>
                     ))
@@ -70,27 +69,21 @@ function Serie() {
                     <p className="text-white text-lg mt-2">No genres available</p>
                   )}
                 </div>
-              </div>
-              <div className="flex space-x-72 mt-8 items-center  justify-left">
                 <h3 className="text-red-700 text-lg">Released :</h3>
-                <h3 className="text-white text-lg mt-2 text-left">{serie.release_date}</h3>
-              </div>
-              <div className="flex mt-8 items-center justify-left">
+                <h3 className="text-white text-lg  text-left">{serie.first_air_date}</h3>
                 <h3 className="text-red-700 text-lg">Production :</h3>
-                <div className="ml-6 flex space-x-2 hover:text-red-700">
+                <div className=" flex space-x-2 hover:text-red-700">
                   {serie?.production_companies && serie.production_companies.length > 0 ?  serie.production_companies.map((company, index) => (
-                    <h3 key={index} className="text-white text-base mt-2 text-left ">
+                    <h3 key={index} className="text-white text-base  text-left ">
                       {company.name}
                     </h3>
-                  )): <p className="text-white text-lg mt-2">No production companies available</p>}
-                </div>
+                  )): <p className="text-white text-lg">No production companies available</p>}
               </div>
-              <div className="flex space-x-72 mt-8 items-center  justify-left">
                 <h3 className="text-red-700 text-lg">Tags :</h3>
                 {serie.tagline? <p className="text-white text-left">{serie.tagline}</p>:<p className="text-white text-left">No tagline available</p>}
-              </div>
             </div>
           </div>
+          <MovieTrailer id={id} movie={false}/>
         </section>
       );
 }

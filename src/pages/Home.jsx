@@ -6,7 +6,7 @@
     getPopularSeries,
   } from "../services/seriesServices";
   import { Link } from "react-router-dom";
-import MovieCard from "./movieCard";
+import MovieCard from "./MovieCard";
 import Movie from "./Movie";
   function Home() {
     const [trendingMovies, setTrendingMovies] = useState([]);

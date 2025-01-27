@@ -58,4 +58,4 @@ A **Netflix Clone** built as a practice project to enhance skills in **state man
 ![fasd](https://github.com/user-attachments/assets/ad1a59cf-5c56-4738-a5de-49ed7fa4035c)
 
 ## 🔗 Link for the Deployed Website :
-- 
+- https://netflix-clone-one-omega-71.vercel.app/
